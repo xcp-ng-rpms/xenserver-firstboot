@@ -1,6 +1,6 @@
 Summary: XenServer scripts to run first time machine is booted
 Name: xenserver-firstboot
-Version: 1.0.7
+Version: 1.0.9
 Release: 1.1.xcp
 License: GPL
 Group: System Environment/Base
