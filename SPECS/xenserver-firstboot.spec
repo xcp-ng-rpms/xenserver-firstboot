@@ -1,7 +1,7 @@
 Summary: XenServer scripts to run first time machine is booted
 Name: xenserver-firstboot
 Version: 1.0.9
-Release: 1.1.xcp
+Release: 1.2.xcp
 License: GPL
 Group: System Environment/Base
 URL: http://www.citrix.com
@@ -59,6 +59,7 @@ touch /etc/firstboot.d/data/firstboot_in_progress || :
 /etc/firstboot.d/??-*
 %dir /etc/firstboot.d/state
 %dir /etc/firstboot.d/log
+%dir /etc/firstboot.d/data
 /opt/xensource/lib/storage-creation-utils.sh
 %{_datadir}/xenserver-firstboot/firstboot_in_progress.dist
 %{_unitdir}/xs-firstboot.service
