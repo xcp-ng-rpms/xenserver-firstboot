@@ -1,15 +1,15 @@
 Summary: XenServer scripts to run first time machine is booted
 Name: xenserver-firstboot
-Version: 1.0.11
+Version: 1.0.14
 Release: 1.1%{?dist}
 License: GPL
 Group: System Environment/Base
 URL: http://www.citrix.com
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/xenserver-firstboot/archive?at=v1.0.11&format=tar.gz&prefix=xenserver-firstboot-1.0.11#/xenserver-firstboot-1.0.11.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/xenserver-firstboot/archive?at=v1.0.14&format=tar.gz&prefix=xenserver-firstboot-1.0.14#/xenserver-firstboot-1.0.14.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/xenserver-firstboot/archive?at=v1.0.11&format=tar.gz&prefix=xenserver-firstboot-1.0.11#/xenserver-firstboot-1.0.11.tar.gz) = 8625525924de7dfc21a605bf6ec4ed13e6f1432c
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/xenserver-firstboot/archive?at=v1.0.14&format=tar.gz&prefix=xenserver-firstboot-1.0.14#/xenserver-firstboot-1.0.14.tar.gz) = 093ea93d9fd5ba9d4aff17216406e40363560e45
 
 BuildArch: noarch
 Requires(post): systemd
@@ -76,9 +76,19 @@ touch /etc/firstboot.d/data/firstboot_in_progress || :
 /sbin/xs-firstboot
 
 %changelog
-* Tue Jul 09 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.0.11-1.1
+* Thu Dec 19 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.0.14-1.1
+- Rebase on CH 8.1
 - Re-add fix to prevent firstboot_in_progress to resurrect upon next updates
-- Refs https://bugs.xenserver.org/browse/XSO-877
+- (see https://bugs.xenserver.org/browse/XSO-877)
+
+* Thu Oct 24 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 1.0.14-1
+- CA-327140: Make plugging of PIFs best-effort
+
+* Thu Jul 04 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 1.0.13-1
+- CA-322079: Reinstate PBIS nsswitch changes after dom0 upgrade
+
+* Tue May 28 2019 Ross Lagerwall <ross.lagerwall@citrix.com> - 1.0.12-1
+- CA-260176: Use DNS settings after network reset
 
 * Thu Dec 06 2018 Ross Lagerwall <ross.lagerwall@citrix.com> - 1.0.11-1
 - CA-303371 Use NetApp standard NFS ports in CC firewall rules
